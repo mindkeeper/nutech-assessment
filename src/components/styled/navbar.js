@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../assets/styles";
+import { theme } from "../../assets/styles";
 
 export const Nav = styled.nav`
   display: flex;
