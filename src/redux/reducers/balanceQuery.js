@@ -12,9 +12,6 @@ export const balanceQuery = createApi({
         method: "GET",
         token,
       }),
-      transformResponse: (res) => ({
-        data: res.data,
-      }),
       providesTags: ["Balance"],
     }),
   }),
