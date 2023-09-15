@@ -1,5 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 import { axiosBaseQuery } from "../../api";
+import { balanceQuery } from "./balanceQuery";
 
 export const topUpQuery = createApi({
   baseQuery: axiosBaseQuery(),
@@ -8,12 +9,15 @@ export const topUpQuery = createApi({
   endpoints: (builder) => ({
     topUp: builder.mutation({
       query: ({ data, token }) => ({
-        url: "/top-up",
+        url: "/topup",
         method: "POST",
         data,
         token,
       }),
-      invalidatesTags: ["Balance"],
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        await queryFulfilled;
+        dispatch(balanceQuery.util.invalidateTags(["Balance"]));
+      },
     }),
   }),
 });

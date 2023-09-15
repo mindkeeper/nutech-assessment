@@ -27,7 +27,7 @@ export function Navbar() {
       <NavContainer>
         <LogoContainer
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         >
           <Logo src={logo} alt="logo" />
