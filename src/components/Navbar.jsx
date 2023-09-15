@@ -7,7 +7,7 @@ import {
   Nav,
   NavContainer,
   NavLinkContainer,
-} from ".";
+} from "./styled";
 import logo from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 
