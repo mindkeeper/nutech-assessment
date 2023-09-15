@@ -2,7 +2,7 @@ import axios from "axios";
 
 const host = import.meta.env.VITE_BACKEND_URL;
 
-export const axiosInstance = axios.create({ baseURL: `${host}/api` });
+export const axiosInstance = axios.create({ baseURL: host });
 
 export const axiosBaseQuery =
   () =>
@@ -19,11 +19,11 @@ export const axiosBaseQuery =
         },
       });
       return res.data;
-    } catch (error) {
+    } catch (err) {
       return {
         error: {
-          status: error?.response.status,
-          message: error?.respose?.data?.message || error?.message,
+          status: err.response.status,
+          message: err.response?.data?.message || err.message,
         },
       };
     }
