@@ -14,7 +14,7 @@ import {
 import { useLocation } from "react-router-dom";
 import authImage from "../../../assets/images/auth-image.png";
 import logo from "../../../assets/images/logo.png";
-export function _Layout({ children }) {
+export function Layout({ children }) {
   const param = useLocation();
   return (
     <Container>
