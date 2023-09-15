@@ -27,7 +27,6 @@ export function Confirm({
 
       submit();
       toggleModal("confirm");
-      toggleModal("notification");
     },
     [submit, toggleModal]
   );
