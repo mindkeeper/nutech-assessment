@@ -7,9 +7,10 @@ export const bannerQuery = createApi({
   reducerPath: "bannerQuery",
   endpoints: (builder) => ({
     getBanner: builder.query({
-      query: () => ({
+      query: ({ token }) => ({
         url: "/banner",
         method: "GET",
+        token,
       }),
       providesTags: ["Banner"],
     }),
