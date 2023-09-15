@@ -9,6 +9,7 @@ export const profileQuery = createApi({
     getProfile: builder.query({
       query: ({ token }) => ({
         url: "/profile",
+        method: "GET",
         token,
       }),
       providesTags: ["Profile"],
