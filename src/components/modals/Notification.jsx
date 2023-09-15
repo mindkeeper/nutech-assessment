@@ -7,7 +7,7 @@ import {
   ModalWrapper,
   SubmitButton,
 } from ".";
-import { CustomText } from "..";
+import { CustomText } from "../styled";
 import { delimiterFormatter } from "../../utils";
 import { BsCheck2 as SuccessIcon } from "react-icons/bs";
 import { RxCross2 as FailedIcon } from "react-icons/rx";

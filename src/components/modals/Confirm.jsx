@@ -11,7 +11,7 @@ import {
 
 import { useCallback } from "react";
 import logo from "../../assets/images/logo.png";
-import { CustomText } from "..";
+import { CustomText } from "../styled";
 import { delimiterFormatter } from "../../utils";
 
 export function Confirm({
