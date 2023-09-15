@@ -9,6 +9,7 @@ import { topUpQuery } from "./reducers/topUpQuery";
 import { transactionQuery } from "./reducers/transactionQuery";
 import { authSliceReducer } from "./reducers/authSlice";
 import { bannerQuery } from "./reducers/bannerQuery";
+import { serviceQuery } from "./reducers/serviceQuery";
 const secretKey = import.meta.env.VITE_SECRET_KEY;
 
 const persistConfig = {
@@ -32,6 +33,7 @@ const reducer = combineReducers({
   [topUpQuery.reducerPath]: topUpQuery.reducer,
   [transactionQuery.reducerPath]: transactionQuery.reducer,
   [bannerQuery.reducerPath]: bannerQuery.reducer,
+  [serviceQuery.reducerPath]: serviceQuery.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -47,7 +49,8 @@ export const store = configureStore({
       .concat(profileQuery.middleware)
       .concat(topUpQuery.middleware)
       .concat(transactionQuery.middleware)
-      .concat(bannerQuery.middleware),
+      .concat(bannerQuery.middleware)
+      .concat(serviceQuery.middleware),
 });
 
 export const persistor = persistStore(store);
