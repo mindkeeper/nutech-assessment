@@ -5,6 +5,8 @@ import { GlobalStyle, theme } from "./assets/styles";
 import { ThemeProvider } from "styled-components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./utils";
 
 export default function App() {
   return (
@@ -21,7 +23,7 @@ export default function App() {
             draggable={true}
             theme="light"
           />
-          <div>Home</div>
+          <RouterProvider router={router} />
         </ThemeProvider>
       </PersistGate>
     </Provider>
