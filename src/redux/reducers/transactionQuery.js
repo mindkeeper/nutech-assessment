@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 import { axiosBaseQuery } from "../../api";
-
+import { balanceQuery } from "./balanceQuery";
 export const transactionQuery = createApi({
   baseQuery: axiosBaseQuery(),
   reducerPath: "transactionQuery",
@@ -13,6 +13,10 @@ export const transactionQuery = createApi({
         data,
         token,
       }),
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        await queryFulfilled;
+        dispatch(balanceQuery.util.invalidateTags(["Balance"]));
+      },
     }),
   }),
 });
