@@ -36,7 +36,6 @@ export function Transaction() {
   const {
     data: { balance },
   } = useGetBalanceQuery({ token: accessToken });
-  console.log(balance);
   const [createTransaction, { isSuccess: isSuccessTransaction, isError }] =
     useCreateTransactionMutation();
 
