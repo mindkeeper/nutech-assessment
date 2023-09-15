@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import { theme } from "../../../assets/styles";
+import { theme } from "../../../../assets/styles";
 export const Container = styled.div`
   display: flex;
   min-height: 100vh;
@@ -49,7 +49,7 @@ export const Title = styled.h2`
   font-weight: 700;
   color: black;
   font-size: 24px;
-  width: 250px;
+  width: 270px;
   text-align: center;
 `;
 export const BannerContainer = styled.section`
