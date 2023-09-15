@@ -4,6 +4,7 @@ import { MainLayout, ProtectedLayout } from "../components";
 import { Home } from "../app/home";
 import { TopUp } from "../app/top-up";
 import { Transaction } from "../app/transaction";
+import { History } from "../app/history";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
           {
             path: "/transaction",
             element: <Transaction />,
+          },
+          {
+            path: "/history",
+            element: <History />,
           },
         ],
       },
