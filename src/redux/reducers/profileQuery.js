@@ -11,7 +11,6 @@ export const profileQuery = createApi({
         url: "/profile",
         token,
       }),
-      transformResponse: (res) => ({ data: res.data }),
       providesTags: ["Profile"],
     }),
     updateProfile: builder.mutation({
