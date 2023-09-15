@@ -28,7 +28,6 @@ export function TopUp() {
   const [amount, setAmount] = useState("");
   const [isSubmittable, setIsSubmittable] = useState(false);
   const { isOpen, toggleModal } = useModal();
-
   const amounts = useMemo(
     () => [10000, 20000, 50000, 100000, 250000, 500000],
     []
@@ -63,7 +62,8 @@ export function TopUp() {
       token: accessToken,
     };
     topUp({ ...body });
-  }, [topUp, accessToken, amount]);
+    toggleModal("notification");
+  }, [topUp, accessToken, amount, toggleModal]);
 
   useEffect(() => {
     checkAmount(amount);
@@ -135,6 +135,7 @@ export function TopUp() {
           type="TOPUP"
         />
       )}
+
       {isOpen.notification && isError && (
         <Notification
           type="TOPUP"
