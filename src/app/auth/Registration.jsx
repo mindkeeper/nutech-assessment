@@ -64,7 +64,6 @@ export function Registration() {
       toast.success("Registrasi Berhasil");
       navigate("/login");
     } else if (isError) {
-      console.log(error);
       toast.error(error.message);
     }
   }, [isSuccess, isError, error, navigate]);
