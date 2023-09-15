@@ -7,7 +7,7 @@ import { balanceQuery } from "./reducers/balanceQuery";
 import { profileQuery } from "./reducers/profileQuery";
 import { topUpQuery } from "./reducers/topUpQuery";
 import { transactionQuery } from "./reducers/transactionQuery";
-
+import { authSliceReducer } from "./reducers/authSlice";
 const secretKey = import.meta.env.VITE_SECRET_KEY;
 
 const persistConfig = {
@@ -24,6 +24,7 @@ const persistConfig = {
   ],
 };
 const reducer = combineReducers({
+  auth: authSliceReducer,
   [authQuery.reducerPath]: authQuery.reducer,
   [balanceQuery.reducerPath]: balanceQuery.reducer,
   [profileQuery.reducerPath]: profileQuery.reducer,
