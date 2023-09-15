@@ -1,6 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 import { axiosBaseQuery } from "../../api";
 import { balanceQuery } from "./balanceQuery";
+import { historyQuery } from "./historyQuery";
 
 export const topUpQuery = createApi({
   baseQuery: axiosBaseQuery(),
@@ -17,6 +18,7 @@ export const topUpQuery = createApi({
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         await queryFulfilled;
         dispatch(balanceQuery.util.invalidateTags(["Balance"]));
+        dispatch(historyQuery.util.invalidateTags(["History"]));
       },
     }),
   }),
