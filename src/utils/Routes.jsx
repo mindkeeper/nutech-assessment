@@ -3,6 +3,7 @@ import { Login, Registration } from "../app/auth";
 import { MainLayout, ProtectedLayout } from "../components";
 import { Home } from "../app/home";
 import { TopUp } from "../app/top-up";
+import { Transaction } from "../app/transaction";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
           {
             path: "/top-up",
             element: <TopUp />,
+          },
+          {
+            path: "/transaction",
+            element: <Transaction />,
           },
         ],
       },
