@@ -1,20 +1,20 @@
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 import { axiosBaseQuery } from "../../api";
 
-export const balanceQuery = createApi({
+export const bannerQuery = createApi({
   baseQuery: axiosBaseQuery(),
-  reducerPath: "balanceQuery",
-  tagTypes: ["Balance"],
+  tagTypes: ["Banner"],
+  reducerPath: "bannerQuery",
   endpoints: (builder) => ({
-    getBalance: builder.query({
+    getBanner: builder.query({
       query: ({ token }) => ({
-        url: "/balance",
+        url: "/banner",
         method: "GET",
         token,
       }),
-      providesTags: ["Balance"],
+      providesTags: ["Banner"],
     }),
   }),
 });
 
-export const { useGetBalanceQuery } = balanceQuery;
+export const { useGetBannerQuery } = bannerQuery;

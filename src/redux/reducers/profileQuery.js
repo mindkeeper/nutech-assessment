@@ -9,9 +9,9 @@ export const profileQuery = createApi({
     getProfile: builder.query({
       query: ({ token }) => ({
         url: "/profile",
+        method: "GET",
         token,
       }),
-      transformResponse: (res) => ({ data: res.data }),
       providesTags: ["Profile"],
     }),
     updateProfile: builder.mutation({

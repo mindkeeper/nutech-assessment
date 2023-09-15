@@ -1,5 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 import { axiosBaseQuery } from "../../api";
+import { saveToken } from "./authSlice";
 
 export const authQuery = createApi({
   baseQuery: axiosBaseQuery(),
@@ -22,6 +23,14 @@ export const authQuery = createApi({
         data,
       }),
       invalidatesTags: ["Auth"],
+      async onQueryStarted(data, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(saveToken(data?.token));
+        } catch (error) {
+          console.log(error);
+        }
+      },
     }),
   }),
 });

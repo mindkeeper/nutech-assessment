@@ -18,9 +18,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useToggle } from "./hooks";
 import { useLoginMutation } from "../../redux/reducers/authQuery";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { saveToken } from "../../redux/reducers/authSlice";
 
 export function Login() {
   const [login, { isSuccess, isError, error, data }] = useLoginMutation();
@@ -29,7 +27,6 @@ export function Login() {
   const [visible, toggleVisibility] = useToggle();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const checkForm = useCallback((body) => {
     if (!body.email || !body.password) return setSubmittable(false);
@@ -62,12 +59,11 @@ export function Login() {
   useEffect(() => {
     if (isSuccess) {
       toast.success("Login Berhasil");
-      dispatch(saveToken(data.token));
       navigate("/");
     } else if (isError) {
       toast.error(error.message);
     }
-  }, [isSuccess, isError, data, error, dispatch, navigate]);
+  }, [isSuccess, isError, data, error, navigate]);
 
   return (
     <Layout>
