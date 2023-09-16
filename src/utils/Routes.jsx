@@ -5,6 +5,8 @@ import { Home } from "../app/home";
 import { TopUp } from "../app/top-up";
 import { Transaction } from "../app/transaction";
 import { History } from "../app/history";
+import { ProfileLayout } from "../app/profile/components";
+import { Profile } from "../app/profile";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +38,15 @@ export const router = createBrowserRouter([
           {
             path: "/history",
             element: <History />,
+          },
+        ],
+      },
+      {
+        element: <ProfileLayout />,
+        children: [
+          {
+            path: "/account",
+            element: <Profile />,
           },
         ],
       },
