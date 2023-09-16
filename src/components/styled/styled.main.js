@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
+  margin-top: 2rem;
   display: flex;
   width: 100%;
 `;
@@ -28,8 +29,8 @@ export const UserSection = styled.section`
   height: 40vh;
 
   @media (${theme.breakPoint.tabletL}) {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-    height: 20vh;
+    height: auto;
   }
 `;

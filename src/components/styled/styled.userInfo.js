@@ -4,8 +4,8 @@ import { theme } from "../../assets/styles";
 export const UserInfoContainer = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: column;
   gap: 2rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -15,8 +15,8 @@ export const UserInfoContainer = styled.div`
 `;
 
 export const UserImage = styled.img`
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   border: 1px solid grey;
 `;
