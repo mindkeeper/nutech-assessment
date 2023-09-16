@@ -18,3 +18,14 @@ export const BalanceInfo = styled.div`
   justify-content: space-evenly;
   color: white;
 `;
+export const VisbilityWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+
+export const IconWrapper = styled.div`
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+`;
