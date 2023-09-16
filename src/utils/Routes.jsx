@@ -5,6 +5,7 @@ import { Home } from "../app/home";
 import { TopUp } from "../app/top-up";
 import { Transaction } from "../app/transaction";
 import { History } from "../app/history";
+import RHistory from "../app/history/RHistory";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
           {
             path: "/history",
             element: <History />,
+          },
+          {
+            path: "/test",
+            element: <RHistory />,
           },
         ],
       },
