@@ -7,14 +7,25 @@ import {
 import avatar from "../assets/images/avatar.png";
 import { useGetProfileQuery } from "../redux/reducers/profileQuery";
 import { useSelector } from "react-redux";
+import { useCallback } from "react";
 
 export function UserInfo() {
   const { accessToken } = useSelector((state) => state.auth);
   const { data: user, isSuccess } = useGetProfileQuery({ token: accessToken });
+
+  const checkImage = useCallback((image) => {
+    if (image.endsWith("/null")) return false;
+    return true;
+  }, []);
+
   return (
     <UserInfoContainer>
       <UserImage
-        src={isSuccess && user?.profile_image ? user?.profile_image : avatar}
+        src={
+          isSuccess && checkImage(user?.profile_image)
+            ? user?.profile_image
+            : avatar
+        }
       />
       <TextContainer>
         <CustomText weight="base" size="medium">
