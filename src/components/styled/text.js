@@ -28,6 +28,8 @@ export const CustomText = styled.p`
         return "700";
       case "thin":
         return "300";
+      case "semibold":
+        return "500"
       default:
         return "normal";
     }
