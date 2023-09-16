@@ -95,3 +95,26 @@ export const CancelButton = styled.button`
     font-size: 18px;
   }
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%1;
+  justify-content: center;
+`;
+
+export const LogoutButton = styled.button`
+  padding: 10px 12px;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: ${(props) =>
+    props.$type === "logout" ? "#ccc" : "var(--primary)"};
+  color: ${(props) => (props.$type === "logout" ? "black" : "white")};
+  transform: transform 0.2s, font-weight 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    font-weight: bold;
+  }
+`;
