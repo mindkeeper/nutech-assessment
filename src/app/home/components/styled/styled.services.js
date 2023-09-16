@@ -37,7 +37,7 @@ export const ServiceImage = styled.img`
   width: 3rem;
   height: 3rem;
 
-  @media (${theme.breakPoint}) {
+  @media (${theme.breakPoint.tabletL}) {
     width: 4rem;
     height: 4rem;
   }
