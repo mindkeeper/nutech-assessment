@@ -17,7 +17,7 @@ export const InputContainer = styled.div`
 
 export const LeftIcons = styled.div`
   position: absolute;
-  top: 33%;
+  top: 31%;
   color: grey;
   font-size: 1rem;
   left: 15px;
@@ -26,7 +26,7 @@ export const LeftIcons = styled.div`
 
 export const PasswordIcon = styled.div`
   position: absolute;
-  top: 33%;
+  top: 31%;
   right: 15px;
   color: grey;
   font-size: 1rem;
@@ -41,6 +41,7 @@ export const ButtonWrapper = styled.div`
 export const LinkContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2px;
   justify-content: center;
