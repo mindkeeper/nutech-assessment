@@ -26,7 +26,9 @@ export function UserInfo() {
   return (
     <UserInfoContainer>
       {isFetching ? (
-        <Skeleton circle={true} />
+        <>
+          <Skeleton circle={true} />
+        </>
       ) : (
         isSuccess && (
           <>
@@ -36,7 +38,7 @@ export function UserInfo() {
               }
             />
             <TextContainer>
-              <CustomText weight="base" size="large">
+              <CustomText weight="base" size="medium">
                 Selamat Datang,
               </CustomText>
               <CustomText weight="semibold" size="extraLarge">

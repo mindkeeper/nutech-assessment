@@ -4,7 +4,7 @@ import { theme } from "../../assets/styles";
 export const UserInfoContainer = styled.div`
   flex: 1;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   width: 100%;
 `;
