@@ -24,6 +24,10 @@ export const UserImage = styled.img`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
+  @media (${theme.breakPoint.tabletL}) {
+    align-items: start;
+  }
   /* gap: 1rem; */
 `;

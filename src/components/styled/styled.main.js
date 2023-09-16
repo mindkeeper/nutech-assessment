@@ -14,12 +14,15 @@ export const Main = styled.main`
 `;
 
 export const MainWrapper = styled.div`
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
   width: 90%;
   margin: 0 auto;
+
+  @media (${theme.breakPoint.tabletL}) {
+    gap: 4rem;
+  }
 `;
 
 export const UserSection = styled.section`
