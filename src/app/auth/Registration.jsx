@@ -21,7 +21,8 @@ import { useRegisterMutation } from "../../redux/reducers/authQuery";
 import { useNavigate } from "react-router-dom";
 
 export function Registration() {
-  const [register, { isSuccess, isError, error }] = useRegisterMutation();
+  const [register, { isSuccess, isError, error, isLoading }] =
+    useRegisterMutation();
   const [isSubmittable, setIssubmittable] = useState(false);
   const [body, setBody] = useState({});
   const [passwordVisibility, setPasswordVisibility] = useState({
@@ -166,7 +167,7 @@ export function Registration() {
           </PasswordIcon>
         </InputContainer>
         <ButtonWrapper>
-          <Button disabled={!isSubmittable}>Registrasi</Button>
+          <Button disabled={!isSubmittable || isLoading}>Registrasi</Button>
         </ButtonWrapper>
         <LinkContainer>
           <LinkText>sudah punya akun? login di</LinkText>
