@@ -13,7 +13,9 @@ export function UserInfo() {
   const { data: user, isSuccess } = useGetProfileQuery({ token: accessToken });
   return (
     <UserInfoContainer>
-      <UserImage src={isSuccess && user?.image ? user?.image : avatar} />
+      <UserImage
+        src={isSuccess && user?.profile_image ? user?.profile_image : avatar}
+      />
       <TextContainer>
         <CustomText weight="base" size="medium">
           Selamat Datang,
