@@ -11,6 +11,7 @@ import { CustomText } from "../styled";
 import { delimiterFormatter } from "../../utils";
 import { BsCheck2 as SuccessIcon } from "react-icons/bs";
 import { RxCross2 as FailedIcon } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 export function Notification({
   status,
@@ -19,6 +20,7 @@ export function Notification({
   type,
   transactionType,
 }) {
+  const navigate = useNavigate();
   return (
     <Container>
       <ModalWrapper>
@@ -49,6 +51,7 @@ export function Notification({
           <SubmitButton
             onClick={() => {
               toggleModal("notification");
+              navigate("/");
             }}
           >
             Kembali ke beranda

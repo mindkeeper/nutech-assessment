@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../../assets/styles";
 
 export const ServiceContainer = styled.section`
   width: 100%;
@@ -8,8 +9,12 @@ export const ServiceWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   /* gap: 1rem; */
+  justify-content: space-evenly;
   width: 100%;
-  justify-content: space-between;
+
+  @media (${theme.breakPoint.tabletL}) {
+    justify-content: space-between;
+  }
 `;
 export const ServiceCard = styled.div`
   display: flex;
@@ -29,6 +34,10 @@ export const ServiceCard = styled.div`
   }
 `;
 export const ServiceImage = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
+  @media (${theme.breakPoint.tabletL}) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;

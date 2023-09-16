@@ -13,6 +13,8 @@ export const CustomText = styled.p`
         return "20px";
       case "large":
         return "24px";
+      case "extraLarge":
+        return "36px";
       default:
         return "16px";
     }
@@ -26,6 +28,8 @@ export const CustomText = styled.p`
         return "700";
       case "thin":
         return "300";
+      case "semibold":
+        return "500"
       default:
         return "normal";
     }

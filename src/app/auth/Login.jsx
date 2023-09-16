@@ -21,7 +21,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export function Login() {
-  const [login, { isSuccess, isError, error, data }] = useLoginMutation();
+  const [login, { isSuccess, isError, error, data, isLoading }] =
+    useLoginMutation();
   const [submittable, setSubmittable] = useState(false);
   const [loginBody, setLoginBody] = useState({});
   const [visible, toggleVisibility] = useToggle();
@@ -98,7 +99,7 @@ export function Login() {
           </PasswordIcon>
         </InputContainer>
         <ButtonWrapper>
-          <Button disabled={!submittable}>Masuk</Button>
+          <Button disabled={!submittable || isLoading}>Masuk</Button>
         </ButtonWrapper>
         <LinkContainer>
           <LinkText>belum punya akun? registrasi di</LinkText>

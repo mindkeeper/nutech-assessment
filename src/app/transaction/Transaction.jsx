@@ -83,7 +83,7 @@ export function Transaction() {
     <TransactionContainer>
       <TransactionWrapper>
         <TextWrapper>
-          <CustomText>Pilih pembayaran</CustomText>
+          <CustomText size="medium">Pilih pembayaran</CustomText>
         </TextWrapper>
         {isSuccess && (
           <Services
@@ -95,7 +95,7 @@ export function Transaction() {
         {type && matchedService && (
           <>
             <TextWrapper>
-              <CustomText>Pembayaran</CustomText>
+              <CustomText size="medium">Pembayaran</CustomText>
               <TypeContainer>
                 <TypeIcon src={matchedService?.service_icon} alt="logo" />
                 <CustomText weight="bold">

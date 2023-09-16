@@ -73,8 +73,8 @@ export function TopUp() {
     <TopUpContainer>
       <TopUpWrapper>
         <TextWrapper>
-          <CustomText size="small">Silahkan Masukkan</CustomText>
-          <CustomText size="large" weight="bold">
+          <CustomText size="medium">Silahkan Masukkan</CustomText>
+          <CustomText size="extraLarge" weight="semibold">
             Nominal Top Up
           </CustomText>
         </TextWrapper>

@@ -8,17 +8,22 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   width: 100%;
 `;
 
 export const MainWrapper = styled.div`
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
   width: 90%;
   margin: 0 auto;
+
+  @media (${theme.breakPoint.tabletL}) {
+    gap: 4rem;
+  }
 `;
 
 export const UserSection = styled.section`
@@ -28,8 +33,8 @@ export const UserSection = styled.section`
   height: 40vh;
 
   @media (${theme.breakPoint.tabletL}) {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-    height: 20vh;
+    height: auto;
   }
 `;

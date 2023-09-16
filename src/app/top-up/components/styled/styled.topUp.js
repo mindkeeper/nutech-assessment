@@ -49,7 +49,7 @@ export const InputContainer = styled.div`
 
 export const InputIcon = styled.div`
   position: absolute;
-  top: 30%;
+  top: 31%;
   color: grey;
   font-size: 1rem;
   left: 15px;
@@ -57,7 +57,7 @@ export const InputIcon = styled.div`
 `;
 
 export const Input = styled.input`
-  padding: 10px 40px;
+  padding: 16px 40px;
   font-size: 1rem;
   border-radius: 4px;
   border: solid 1px grey;
