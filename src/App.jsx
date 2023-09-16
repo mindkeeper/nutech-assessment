@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./utils";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function App() {
   const queryClient = new QueryClient();
