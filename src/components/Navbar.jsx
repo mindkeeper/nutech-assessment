@@ -1,9 +1,14 @@
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
+  BlurWrapper,
   CustomLink,
+  CustomMobileLink,
+  HamburgerWrapper,
   Logo,
   LogoContainer,
   LogoTitle,
+  MobileLinkContainer,
+  MobileLinks,
   Nav,
   NavContainer,
   NavLinkContainer,
@@ -11,7 +16,12 @@ import {
 import logo from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 
+import { GiHamburgerMenu as Hamburger } from "react-icons/gi";
+import { IoCloseOutline as Close } from "react-icons/io5";
+
 export function Navbar() {
+  const [isClicked, setIsclicked] = useState(false);
+  const toggleClick = useCallback(() => setIsclicked((prev) => !prev), []);
   const links = useMemo(
     () => [
       { label: "Top Up", path: "/top-up" },
@@ -40,6 +50,18 @@ export function Navbar() {
             </CustomLink>
           ))}
         </NavLinkContainer>
+        <HamburgerWrapper onClick={toggleClick}>
+          {isClicked ? <Close /> : <Hamburger />}
+        </HamburgerWrapper>
+        <BlurWrapper $isActive={isClicked}>
+          <MobileLinks>
+            {links.map((link, idx) => (
+              <MobileLinkContainer key={idx}>
+                <CustomMobileLink to={link.path}>{link.label}</CustomMobileLink>
+              </MobileLinkContainer>
+            ))}
+          </MobileLinks>
+        </BlurWrapper>
       </NavContainer>
     </Nav>
   );
