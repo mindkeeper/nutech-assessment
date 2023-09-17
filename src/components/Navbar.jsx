@@ -53,16 +53,10 @@ export function Navbar() {
         <HamburgerWrapper onClick={toggleClick}>
           {isClicked ? <Close /> : <Hamburger />}
         </HamburgerWrapper>
-        <BlurWrapper $isActive={isClicked}>
+        <BlurWrapper onClick={toggleClick} $isActive={isClicked}>
           <MobileLinks>
             {links.map((link, idx) => (
-              <MobileLinkContainer
-                key={idx}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsclicked(false);
-                }}
-              >
+              <MobileLinkContainer key={idx}>
                 <CustomMobileLink to={link.path}>{link.label}</CustomMobileLink>
               </MobileLinkContainer>
             ))}
