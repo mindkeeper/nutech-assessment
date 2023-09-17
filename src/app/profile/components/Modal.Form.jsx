@@ -12,7 +12,7 @@ export function ConfirmModal({ toggleModal, submitHandler }) {
     <Container>
       <ModalWrapper>
         <ModalContent>
-          <CustomText>Apakah anda yakin ingin keluar?</CustomText>
+          <CustomText>Simpan perubahan?</CustomText>
         </ModalContent>
         <ModalFooter>
           <ButtonWrapper>
