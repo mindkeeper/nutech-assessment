@@ -11,10 +11,9 @@ export const BannerWrapper = styled.div`
 `;
 
 export const BannerSlider = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  overflow: hidden;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 4px;
 `;
 
 export const BannerImage = styled.img`
