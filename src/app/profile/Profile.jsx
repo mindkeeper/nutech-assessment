@@ -12,7 +12,6 @@ export function Profile() {
 
   const toggleEditable = useCallback((e) => {
     e.preventDefault();
-    console.log("editable clicked");
     setEditable((prev) => !prev);
   }, []);
 
