@@ -55,7 +55,7 @@ export const Title = styled.h2`
 export const BannerContainer = styled.section`
   flex: 1;
   display: none;
-  @media (${theme.breakPoint.tabletL}) {
+  @media (${theme.breakPoint.desktopXS}) {
     display: flex;
   }
 `;
@@ -68,7 +68,11 @@ export const Banner = styled.img`
 
 export const FormContent = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   align-items: center;
   justify-content: center;
+
+  @media (${theme.breakPoint.tabletS}) {
+    width: 80%;
+  }
 `;
