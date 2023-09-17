@@ -7,15 +7,21 @@ import { Transaction } from "../app/transaction";
 import { History } from "../app/history";
 import { ProfileLayout } from "../app/profile/components";
 import { Profile } from "../app/profile";
+import { ProtectedAuth } from "../app/auth/components";
 
 export const router = createBrowserRouter([
   {
-    path: "/registration",
-    element: <Registration />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
+    element: <ProtectedAuth />,
+    children: [
+      {
+        path: "/registration",
+        element: <Registration />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
   },
   {
     element: <ProtectedLayout />,

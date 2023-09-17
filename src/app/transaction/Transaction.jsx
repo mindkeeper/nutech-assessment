@@ -33,9 +33,7 @@ export function Transaction() {
     token: accessToken,
   });
   const [matchedService, setMatchingService] = useState(null);
-  const {
-    data: { balance },
-  } = useGetBalanceQuery({ token: accessToken });
+  const { data } = useGetBalanceQuery({ token: accessToken });
   const [createTransaction, { isSuccess: isSuccessTransaction, isError }] =
     useCreateTransactionMutation();
 
@@ -62,7 +60,7 @@ export function Transaction() {
   }, [services, type]);
 
   const handleSubmit = useCallback(() => {
-    if (balance < matchedService.service_tariff)
+    if (data?.balance < matchedService.service_tariff)
       return toast.error("Saldo kamu tidak cukup");
 
     createTransaction({
@@ -72,7 +70,7 @@ export function Transaction() {
     toggleModal("notification");
   }, [
     matchedService?.service_tariff,
-    balance,
+    data?.balance,
     createTransaction,
     matchedService?.service_code,
     accessToken,
