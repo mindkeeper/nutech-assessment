@@ -23,7 +23,6 @@ export const NavContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -41,7 +40,6 @@ export const LogoTitle = styled.h1`
 `;
 
 export const NavLinkContainer = styled.div`
-  flex: 1;
   display: none;
   flex-direction: row;
   justify-content: end;
@@ -99,7 +97,7 @@ export const MobileLinks = styled.div`
   height: 100vh;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 200;
 
   @media (${theme.breakPoint.tabletL}) {
     display: none;

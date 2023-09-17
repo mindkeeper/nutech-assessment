@@ -27,7 +27,7 @@ export const InputContainer = styled.div`
 
 export const LeftIcons = styled.div`
   position: absolute;
-  bottom: 9%;
+  bottom: 14%;
   color: grey;
   font-size: 1rem;
   left: 15px;
@@ -39,7 +39,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  padding: 10px 40px;
+  padding: 16px 40px;
   font-size: 1rem;
   border-radius: 4px;
   border: solid 1px grey;
@@ -47,10 +47,15 @@ export const Input = styled.input`
   &:focus {
     outline: auto;
   }
+
+  &:disabled {
+    background-color: #e3e3e3e3;
+    cursor: not-allowed;
+  }
 `;
 export const EditButton = styled.button`
   width: 100%;
-  padding: 10px;
+  padding: 16px;
   background-color: white;
   color: var(--primary);
   cursor: pointer;
