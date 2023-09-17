@@ -36,7 +36,9 @@ export function LogoutModal({ toggleModal }) {
             <LogoutButton $type="logout" onClick={logoutHandler}>
               Ya
             </LogoutButton>
-            <LogoutButton onClick={toggleModal}>Tidak</LogoutButton>
+            <LogoutButton onClick={(e) => toggleModal(e, "logout")}>
+              Tidak
+            </LogoutButton>
           </ButtonWrapper>
         </ModalFooter>
       </ModalWrapper>
