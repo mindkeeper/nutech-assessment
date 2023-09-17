@@ -56,7 +56,13 @@ export function Navbar() {
         <BlurWrapper $isActive={isClicked}>
           <MobileLinks>
             {links.map((link, idx) => (
-              <MobileLinkContainer key={idx}>
+              <MobileLinkContainer
+                key={idx}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsclicked(false);
+                }}
+              >
                 <CustomMobileLink to={link.path}>{link.label}</CustomMobileLink>
               </MobileLinkContainer>
             ))}
