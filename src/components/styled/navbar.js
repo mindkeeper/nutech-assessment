@@ -6,6 +6,10 @@ export const Nav = styled.nav`
   display: flex;
   width: 100%;
   border-bottom: solid 1px #ccc;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 export const NavContainer = styled.div`
