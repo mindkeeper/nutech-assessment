@@ -13,15 +13,22 @@ import {
 } from "react-icons/md";
 import { Button } from "../../../components/styled";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { useUpdateProfileMutation } from "../../../redux/reducers/profileQuery";
 import { LogoutModal } from "../../../components/modals";
+import { ConfirmModal } from "./Modal.Form";
+import { toast } from "react-toastify";
 
 export function Form({ user, editable, toggleEditable }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [updateProfile] = useUpdateProfileMutation();
+  const [isModalOpen, setIsModalOpen] = useState({
+    logout: false,
+    confirm: false,
+  });
+  const [submittable, setSubmittable] = useState(false);
+  const [updateProfile, { isSuccess, isError, error }] =
+    useUpdateProfileMutation();
   const { accessToken } = useSelector((state) => state.auth);
   const [body, setBody] = useState({
     first_name: user?.first_name,
@@ -35,23 +42,43 @@ export function Form({ user, editable, toggleEditable }) {
     [body]
   );
 
+  const toggleModal = useCallback((e, modalName) => {
+    e.preventDefault();
+    setIsModalOpen((prev) => ({ ...prev, [modalName]: !prev[modalName] }));
+  }, []);
+
+  const checkForm = useCallback((body) => {
+    if (!body.first_name || !body.last_name) return setSubmittable(false);
+    return setSubmittable(true);
+  }, []);
+
   const submitHandler = useCallback(
-    (e, body, token) => {
+    (e) => {
       e.preventDefault();
       const requestBody = {
         data: body,
-        token,
+        token: accessToken,
       };
       updateProfile(requestBody);
       toggleEditable(e);
+      toggleModal(e, "confirm");
     },
-    [updateProfile, toggleEditable]
+    [updateProfile, toggleEditable, body, accessToken, toggleModal]
   );
 
-  const toggleModal = useCallback((e) => {
-    e.preventDefault();
-    setIsModalOpen((prev) => !prev);
-  }, []);
+  useEffect(() => {
+    checkForm(body);
+  }, [body, checkForm]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Profile berhasil diubah");
+      return;
+    }
+    if (isError) {
+      toast.error(error.message);
+    }
+  }, [isError, isSuccess, error?.message]);
 
   return (
     <FormContainer>
@@ -98,8 +125,9 @@ export function Form({ user, editable, toggleEditable }) {
           <>
             <Button
               onClick={(e) => {
-                submitHandler(e, body, accessToken);
+                toggleModal(e, "confirm");
               }}
+              disabled={!submittable}
             >
               Simpan
             </Button>
@@ -109,11 +137,17 @@ export function Form({ user, editable, toggleEditable }) {
         {!editable && (
           <>
             <EditButton onClick={toggleEditable}>Edit Profile</EditButton>
-            <Button onClick={toggleModal}>Log Out</Button>
+            <Button onClick={(e) => toggleModal(e, "logout")}>Log Out</Button>
           </>
         )}
+        {isModalOpen.logout && <LogoutModal toggleModal={toggleModal} />}
+        {isModalOpen.confirm && (
+          <ConfirmModal
+            toggleModal={toggleModal}
+            submitHandler={submitHandler}
+          />
+        )}
       </FormWrapper>
-      {isModalOpen && <LogoutModal toggleModal={toggleModal} />}
     </FormContainer>
   );
 }

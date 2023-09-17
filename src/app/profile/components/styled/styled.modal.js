@@ -70,32 +70,6 @@ export const ModalFooter = styled.div`
   gap: 1rem;
 `;
 
-export const SubmitButton = styled.button`
-  color: var(--primary);
-  background-color: white;
-  border: none;
-  width: 100%;
-  font-size: 1rem;
-  transition: font-size 0.2;
-  cursor: pointer;
-  &:hover {
-    font-size: 18px;
-  }
-`;
-
-export const CancelButton = styled.button`
-  color: #ccc;
-  background-color: white;
-  border: none;
-  width: 100%;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: font-size 0.2;
-  &:hover {
-    font-size: 18px;
-  }
-`;
-
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -103,7 +77,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-export const LogoutButton = styled.button`
+export const CustomButton = styled.button`
   padding: 10px 12px;
   width: 100px;
   border: none;
